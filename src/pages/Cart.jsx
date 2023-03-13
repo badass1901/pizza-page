@@ -5,13 +5,13 @@ const Cart = () => {
   let total = 0;
   const [productsC, setProductsC] = useState([]);
   const { cart, setCart } = useContext(CartContext);
-  const [priceFetched, setPriceFetched] = useState(false);
+  const [priceFetchedC, setPriceFetchedC] = useState(false);
 
   useEffect(() => {
     if (!cart.items) {
       return;
     }
-    if (priceFetched) {
+    if (priceFetchedC) {
       return;
     }
     fetch("https://star-spark-pasta.glitch.me/api/products/cart-items", {
@@ -24,9 +24,9 @@ const Cart = () => {
       .then((res) => res.json())
       .then((products) => {
         setProductsC(products);
-        setPriceFetched(true);
+        setPriceFetchedC(true);
       });
-  }, [cart]);
+  }, [cart, priceFetchedC]);
 
   const getQty = (productId) => {
     return cart.items[productId];

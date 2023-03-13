@@ -19,7 +19,7 @@ const App = () => {
 
   //save to local storage
   useEffect(() => {
-    storeCart(JSON.stringify(cart));
+    storeCart(cart);
   }, [cart]);
 
   return (
