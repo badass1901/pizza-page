@@ -49,7 +49,7 @@ const Cart = () => {
         </li>
       </ul>
       <hr className="my-6" />
-      <div>Grand Total: Rs1000</div>
+      <div>Grand Total: Rs10000</div>
       <div>
         <button>Order Now</button>
       </div>
