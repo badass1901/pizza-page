@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffd5c4;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff8c00;
+  border-radius: 50px;
+}
 .spinner {
   border: 2px solid #ffb050;
   border-top: 4px solid #ff8c00;
@@ -24,4 +36,8 @@
   font-size: 30px;
   color: #ff8c00;
   animation: spin 1s linear infinite;
+}
+
+.pizzaSpin {
+  animation: spin 3s linear infinite;
 }

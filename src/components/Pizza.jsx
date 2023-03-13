@@ -39,7 +39,7 @@ const Pizza = (props) => {
           </span>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <span>Rs: {product.price}</span>
+          <span className="font-bold">₹ {product.price}</span>
           <button
             onClick={(e) => {
               addTocart(e, product);

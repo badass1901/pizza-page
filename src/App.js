@@ -6,18 +6,20 @@ import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProduct";
+import { getCart, storeCart } from "./helpers";
 
 const App = () => {
   const [cart, setCart] = useState({});
   //fetch from local storage
   useEffect(() => {
-    const cart = localStorage.getItem("cart");
-    setCart(JSON.parse(cart));
+    getCart().then((cart) => {
+      setCart(JSON.parse(cart));
+    });
   }, []);
 
   //save to local storage
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    storeCart(JSON.stringify(cart));
   }, [cart]);
 
   return (
