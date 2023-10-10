@@ -2,26 +2,26 @@ import { useEffect, useState } from "react";
 
 import Pizza from "../components/Pizza";
 import Spinner from "../components/Spinner";
-// import { data } from "../data/data";
+import { data } from "../data/data";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [spinner, setSpinner] = useState(false);
-  // const pizzaData = data;
-  useEffect(() => {
-    setSpinner(true);
-    fetch("https://star-spark-pasta.glitch.me/api/products")
-      .then((response) => response.json())
-      .then((products) => {
-        setSpinner(false);
-        setProducts(products);
-      });
-  }, []);
+  const pizzaData = data;
   // useEffect(() => {
   //   setSpinner(true);
-  //   setProducts(pizzaData);
-  //   setSpinner(false);
+  //   fetch("https://star-spark-pasta.glitch.me/api/products")
+  //     .then((response) => response.json())
+  //     .then((products) => {
+  //       setSpinner(false);
+  //       setProducts(products);
+  //     });
   // }, []);
+  useEffect(() => {
+    setSpinner(true);
+    setProducts(pizzaData);
+    setSpinner(false);
+  }, []);
 
   return (
     <div className="container mx-auto flex flex-col items-center">
