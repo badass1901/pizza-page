@@ -39,7 +39,7 @@ const SingleProduct = () => {
   useEffect(() => {
         setSpinner(true);
         
-        setProduct(pizzaData[params.id]);
+        setProduct(pizzaData[(params.id)-1]);
     setSpinner(false);
   }, [params.id, pizzaData]);
   
