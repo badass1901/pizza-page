@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import {data} from "../data";
-
+import { data } from "../data/data";
 const Cart = () => {
+  const pizzaData = data;
   let total = 0;
   const [productsC, setProductsC] = useState([]);
   const { cart, setCart } = useContext(CartContext);
@@ -36,7 +36,7 @@ const Cart = () => {
     if (priceFetchedC) {
       return;
     }
-      setProductsC(products);
+      setProductsC(pizzaData);
         setPriceFetchedC(true);
   },[cart, priceFetchedC])
 
