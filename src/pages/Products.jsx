@@ -21,7 +21,7 @@ const Products = () => {
     setSpinner(true);
     setProducts(pizzaData);
     setSpinner(false);
-  }, []);
+  }, [pizzaData]);
 
   return (
     <div className="container mx-auto flex flex-col items-center">
