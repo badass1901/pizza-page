@@ -41,7 +41,8 @@ const SingleProduct = () => {
         
         setProduct(pizzaData[params.id]);
     setSpinner(false);
-  }, [params.id]);
+  }, [params.id, pizzaData]);
+  
 
   return (
     <div className="container mx-auto mt-12 px-4 flex flex-col items-center">
