@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
+import {data} from "../data";
 
 const Cart = () => {
   let total = 0;
@@ -7,26 +8,37 @@ const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   const [priceFetchedC, setPriceFetchedC] = useState(false);
 
-  useEffect(() => {
-    if (!cart.items) {
+  // useEffect(() => {
+  //   if (!cart.items) {
+  //     return;
+  //   }
+  //   if (priceFetchedC) {
+  //     return;
+  //   }
+  //   fetch("https://star-spark-pasta.glitch.me/api/products/cart-items", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ ids: Object.keys(cart.items) }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((products) => {
+  //       setProductsC(products);
+  //       setPriceFetchedC(true);
+  //     });
+  // }, [cart, priceFetchedC]);
+
+  useEffect(()=>{
+      if (!cart.items) {
       return;
     }
     if (priceFetchedC) {
       return;
     }
-    fetch("https://star-spark-pasta.glitch.me/api/products/cart-items", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ids: Object.keys(cart.items) }),
-    })
-      .then((res) => res.json())
-      .then((products) => {
-        setProductsC(products);
+      setProductsC(products);
         setPriceFetchedC(true);
-      });
-  }, [cart, priceFetchedC]);
+  },[cart, priceFetchedC])
 
   const getQty = (productId) => {
     return cart.items[productId];
