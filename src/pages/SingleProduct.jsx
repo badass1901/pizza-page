@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import Products from "./Products";
 import { CartContext } from "../context/CartContext";
+import { data } from "../data/data";
 
 const SingleProduct = () => {
+  const pizzaData = data;
   const [product, setProduct] = useState({});
   const [spinner, setSpinner] = useState(false);
   const params = useParams();
@@ -35,13 +37,10 @@ const SingleProduct = () => {
   };
 
   useEffect(() => {
-    setSpinner(true);
-    fetch(`https://star-spark-pasta.glitch.me/api/products/${params.id}`)
-      .then((response) => response.json())
-      .then((product) => {
-        setSpinner(false);
-        setProduct(product);
-      });
+        setSpinner(true);
+        
+        setProduct(pizzaData[params.id]);
+    setSpinner(false);
   }, [params.id]);
 
   return (
