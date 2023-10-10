@@ -38,7 +38,7 @@ const Cart = () => {
     }
       setProductsC(pizzaData);
         setPriceFetchedC(true);
-  },[cart, priceFetchedC])
+  },[cart, priceFetchedC,pizzaData])
 
   const getQty = (productId) => {
     return cart.items[productId];
