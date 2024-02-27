@@ -10,7 +10,7 @@ const Products = () => {
   // const pizzaData = data;
   useEffect(() => {
     setSpinner(true);
-    fetch("/api/v1/food/get-foods/")
+    fetch("https://profileserver.shashwatsagar.me:443/api/v1/food/get-foods/")
       .then((response) => response.json())
       .then((products) => {
         setSpinner(false);

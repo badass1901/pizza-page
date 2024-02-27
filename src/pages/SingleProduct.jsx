@@ -36,7 +36,9 @@ const SingleProduct = () => {
 
   useEffect(() => {
     setSpinner(true);
-    fetch(`/api/v1/food/get-foods/${params.id}`)
+    fetch(
+      `https://profileserver.shashwatsagar.me:443/api/v1/food/get-foods/${params.id}`
+    )
       .then((response) => response.json())
       .then((product) => {
         setSpinner(false);

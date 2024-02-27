@@ -14,7 +14,7 @@ const Cart = () => {
     if (priceFetchedC) {
       return;
     }
-    fetch("/api/v1/food/cart-item", {
+    fetch("https://profileserver.shashwatsagar.me:443/api/v1/food/cart-item", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
