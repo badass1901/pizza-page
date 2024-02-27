@@ -5,7 +5,9 @@
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
-
+#root{
+  background-color: linear-gradient(45deg, #fda567, #fff);
+}
 ::-webkit-scrollbar-track {
   background: #ffd5c4;
   border-radius: 20px;
