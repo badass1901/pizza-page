@@ -64,13 +64,15 @@ const SingleProduct = () => {
       >
         <img src={product.foodImage} alt="pizza" />
         <div className="mt-10 md:mt-0 flex flex-col items-center">
-          <h1 className="text-3xl font-bold mb-3">{product.name}</h1>
+          <h1 className="text-3xl font-bold mb-3 hero-text2 text-center">
+            {product.name}
+          </h1>
 
-          <div className="text-md">{product.description}</div>
+          <div className="text-md text-center w-80">{product.description}</div>
           <div className="text-sm bg-gray-100 rounded-sm my-3 px-3 py-1">
             {product.size ? product.size.toUpperCase() : product.size}
           </div>
-          <div className="font-bold text-2xl mt-2">Rs: {product.price}</div>
+          <div className="font-bold text-2xl mt-">Rs: {product.price}</div>
           <button
             onClick={(e) => {
               addTocart(e, product);

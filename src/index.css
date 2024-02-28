@@ -29,6 +29,8 @@
 
 .hero-text{color: #2d1900;
 text-shadow: 2px 4px 4px #fb8a00;}
+.hero-text2{color: #2d1900;
+text-shadow: 1px 1px 3px #fb8a00;}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

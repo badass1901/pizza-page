@@ -29,7 +29,12 @@ const Pizza = (props) => {
     }, 1000);
   };
   return (
-    <Link to={`/products/${product._id}`}>
+    <Link
+      to={`/products/${product._id}`}
+      onClick={document.getElementById("nav").scrollIntoView({
+        behavior: "smooth",
+      })}
+    >
       <div className="p-10 bg-gray-50 w-80  md:w-58 md:p-6 lg:w-60 lg:p-4 ">
         <img src={product.foodImage} alt="pizza" />
         <div className="text-center">
@@ -43,9 +48,6 @@ const Pizza = (props) => {
           <button
             onClick={(e) => {
               addTocart(e, product);
-              document.getElementById(product._id).scrollIntoView({
-                behavior: "smooth",
-              });
             }}
             disabled={isAdding}
             className={`${
