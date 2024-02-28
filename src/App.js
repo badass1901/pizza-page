@@ -23,7 +23,7 @@ const App = () => {
   }, [cart]);
 
   return (
-    <>
+    <div className="parent">
       <Router>
         <CartContext.Provider value={{ cart, setCart }}>
           <Navigation />
@@ -35,7 +35,7 @@ const App = () => {
           </Routes>
         </CartContext.Provider>
       </Router>
-    </>
+    </div>
   );
 };
 

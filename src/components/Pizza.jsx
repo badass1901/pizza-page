@@ -43,6 +43,9 @@ const Pizza = (props) => {
           <button
             onClick={(e) => {
               addTocart(e, product);
+              document.getElementById(product._id).scrollIntoView({
+                behavior: "smooth",
+              });
             }}
             disabled={isAdding}
             className={`${

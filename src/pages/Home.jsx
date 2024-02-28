@@ -11,7 +11,14 @@ const Home = () => {
             <h1 className="text-3xl md:text-6xl font-bold hero-text">
               Don't wait!
             </h1>
-            <button className="px-6 py-2 rounded-full text-white font-bold mt-4 bg-yellow-500 hover:bg-yellow-600">
+            <button
+              className="px-6 py-2 rounded-full text-white font-bold mt-4 bg-yellow-600 hover:bg-yellow-800 transition"
+              onClick={() => {
+                document.getElementById("products").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
               Order Now
             </button>
           </div>
@@ -20,7 +27,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="pb-24">
+      <div className="pb-24" id="products">
         <Products />
       </div>
     </>
